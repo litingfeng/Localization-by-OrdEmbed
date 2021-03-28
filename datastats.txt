@@ -1,0 +1,92 @@
+number of 4 48
+number of 1 52
+ rot: (50,) norot_inds: (50,)
+self.norot_inds  (50,)
+subset [original_half] data: 50
+Files already downloaded and verified
+number of 4 50
+number of 1 50
+ rot: (50,) norot_inds: (50,)
+subset [original_all] data: 100
+
+org_half:
+train acc: 99.00+-1.00
+test acc: 82.20+-2.09
+
+org_all:
+train acc: 93.70+-3.32
+test acc: 86.90+-1.97
+
+half_half:
+train acc: 94.60+-6.22
+test acc: 79.50+-2.58
+
+train acc: 95.40+-5.90
+test acc: 79.90+-3.78
+
+rl (less_conf=isrotated):
+train acc: 92.60+-2.69
+test acc: 84.50+-3.01
+
+train acc: 92.60+-3.23
+test acc: 85.50+-2.06
+
+train acc: 90.50+-5.61
+test acc: 84.40+-1.69
+
+random_rotate (less_conf = isrotated):
+train acc: 90.80+-2.27
+test acc: 84.30+-1.35
+acc_r_back: 45.20+-6.76
+
+rl (less_conf = all this batch):
+train acc: 86.50+-2.16
+test acc: 86.60+-2.15
+
+train acc: 88.30+-3.32
+test acc: 85.10+-2.43
+
+
+random_rotate (less_conf = all this batch):
+train acc: 87.10+-3.75
+test acc: 85.80+-2.32
+
+all_rotate (less_conf = isrotated): same as original_all
+train acc: 95.00+-3.13
+test acc: 85.30+-2.79
+
+----------------------------
+newreward = new_prob_target - prob_target,
+problem: if not rotated back, at least 0; but
+if rotated back, can be negative number.
+The agent will tend to not rotated at all.
+
+rl (less_conf=isrotated): reward not increase much
+train acc: 94.30+-1.49
+test acc: 84.00+-2.45
+acc_r_back: 51.60+-25.84
+
+rl (less_conf = all this batch): basic model, r_back decrease
+train acc: 89.90+-2.62
+test acc: 84.50+-2.97
+
+rl (less_conf=isrotated) + cls half_half_pretrained:
+train acc: 99.80+-0.60
+test acc: 82.00+-2.37
+acc_r_back: 13.20+-20.54
+
+rl (less_conf = prob < 0.9):
+train acc: 91.80+-4.40
+test acc: 83.70+-2.53
+acc_r_back: 41.80+-40.96
+
+rl (less_conf=isrotated) + cls original_half_pretrained:
+train acc: 92.00+-2.83
+test acc: 83.30+-1.79
+acc_r_back: 39.60+-19.94
+
+rl (less_conf=isrotated) + cls original_half_pretrained+ cls trained on
+data BEFORE transfer:
+train acc: 93.20+-2.86
+test acc: 80.60+-0.92
+acc_r_back: 50.40+-23.56

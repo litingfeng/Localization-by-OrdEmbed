@@ -1,0 +1,30 @@
+nohup: ignoring input
+wandb: Currently logged in as: amberberli (use `wandb login --relogin` to force relogin)
+wandb: wandb version 0.10.21 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.10.9
+wandb: Syncing run fix_cls_train_ag_seq2_rot90
+wandb: ⭐️ View project at https://wandb.ai/amberberli/selfpaced
+wandb: 🚀 View run at https://wandb.ai/amberberli/selfpaced/runs/2r3sdxbr
+wandb: Run data is saved locally in wandb/run-20210309_111526-2r3sdxbr
+wandb: Run `wandb off` to turn off syncing.
+Files already downloaded and verified
+Files already downloaded and verified
+total images of 4 & 1:  5000  test:  1000
+loaded from ordinal_loss_newtriplet_st80_m1_lm1_original_half_0to180_ord1st_epochs200/best.pth.tar
+ckpt epoch 104 acc 85.00%
+Traceback (most recent call last):
+  File "self-paced-RL-loss.py", line 202, in <module>
+    train_log = feed_data(net, agent, data_loader=train_loader, is_train=True)
+  File "self-paced-RL-loss.py", line 132, in feed_data
+    angles = torch.deg2rad(action_seq.sum(1) * args.angle_step)
+RuntimeError: result type Float can't be cast to the desired output type Long
+wandb: Waiting for W&B process to finish, PID 22508
+wandb: Program failed with code 1.  Press ctrl-c to abort syncing.
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Find user logs for this run at: wandb/run-20210309_111526-2r3sdxbr/logs/debug.log
+wandb: Find internal logs for this run at: wandb/run-20210309_111526-2r3sdxbr/logs/debug-internal.log
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: 
+wandb: Synced fix_cls_train_ag_seq2_rot90: https://wandb.ai/amberberli/selfpaced/runs/2r3sdxbr
+
