@@ -15,6 +15,7 @@ ordinal embedding.
 ### Description
 The problem for this experiment is to localize 28\*28 digit in 84\*84 cluttered 
 background. Like the image shown below. 
-![alt_text](https://github.com/litingfeng/Localization-by-Ordinal-Embedding/main/images/example1.png)
+<img src="https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/example1.png" width="800" height="400">
+
 ###
                 
