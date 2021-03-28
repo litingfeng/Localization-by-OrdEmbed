@@ -1,10 +1,10 @@
-__pycache__/
+*__pycache__/
 *.py[cod]
 *.pkl
+*.pth.tar
 wandb/
 datasets/__pycache__/
 models/__pycache__/
 util/__pycache__/
 losses/__pycache__/
 .ipynb_checkpoints
-*.pth
