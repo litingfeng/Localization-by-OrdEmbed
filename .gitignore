@@ -2,6 +2,7 @@
 *.py[cod]
 *.pkl
 *.pth.tar
+*.pth
 wandb/
 datasets/__pycache__/
 models/__pycache__/
