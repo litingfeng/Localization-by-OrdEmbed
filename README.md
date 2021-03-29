@@ -29,6 +29,13 @@ embedding space is by L2 distance. To learn this, we use embedding net shown bel
 where
 <img src="https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/note.png" width="800" height="120">
 
-- __Joint train with agent__: After training embedding network, we  
-### Training scripts
+- __Joint train with agent__: After training embedding network, we jointly train it with the agent. 
+ The reward is defined as 
+ <p align="center">
+   <img src="https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/reward.png" width="300" height="30">
+</p>
+And there are 10 actions (the last red dot means stay):  
+<img src="https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/action.png" width="800" height="100">
+
+### Train scripts
                 
