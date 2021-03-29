@@ -3,6 +3,7 @@
 *.pkl
 *.pth.tar
 *.pth
+*.out
 wandb/
 datasets/__pycache__/
 models/__pycache__/

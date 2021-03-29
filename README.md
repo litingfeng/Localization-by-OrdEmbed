@@ -24,7 +24,9 @@ takes up to ten steps to localize the target, starting from the entire image. It
 to achieve this.
 - __Learn ordinal embedding__: train an ordinal embedding network which has the property that the closer the box to 
 groundtruth box, the closer the distance in embedding space. The closeness in pixel space is measured by IoU, and in 
-embedding space is by L2 distance. To learn this, we use embedding net shown below,  
+embedding space is by L2 distance. Note that different from regular object detection method, this 
+method doesn't require classification during training, thus is able to do localization when there's only 
+one class/digit in train set. And it can generalize to other digits without finetuning. To learn this, we use embedding net shown below,  
 <img src="https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/embedingnet.png" width="800" height="160">
 where
 <img src="https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/note.png" width="800" height="120">
@@ -38,4 +40,45 @@ And there are 10 actions (the last red dot means stay):
 <img src="https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/action.png" width="800" height="100">
 
 ### Train scripts
+- __Pretrain embedding net__: first, generate cluttered mnist dataset by running `clutter_mnist_scale.py` directly, which will
+generate and save `npy` files for data and label. Then, below is an example of pretrain embedding network using digit 4 images. One could
+also directly run `./pretrain.sh`. They are the same.
+```bash
+CUDA_VISIBLE_DEVICES=0 python ordinal-pretrain-cluttermnist-scale.py \
+                       --savename cluttermnist_pretrain \
+                       --digit 4 \
+                       --batch_size 192 \
+                       --epochs 50 \
+                       --lr 0.0019125313967198946 \
+                       --margin 60 \
+                       --pooling_mode align \
+                       --pooling_size 5 \
+                       --optimizer SGD \
+                       --patience 50 \
+                       --step 25
+```
+- __Jointly train__: run `./joint.sh`.
+```bash
+CUDA_VISIBLE_DEVICES=0 python train-joint.py \
+                       --savename cluttermnist_joint \
+                       --pretrained cluttermnist_pretrain/best.pth.tar \
+                       --lr_ag 0.001 \
+                       --lr 0.001 \
+                       --pooling_mode align \
+                       --pooling_size 5 \
+                       --lamb_ent 5. \
+                       --seq_len 10 \
+                       --margin 60 \
+                       --sign 0 \
+                       --hidden_size 48 \
+                       --freeze 0 \
+                       --norm 0 \
+                       --num_act 10 \
+                       --optimizer_ag Adam \
+                       --optimizer SGD \
+                       --epochs 250 \
+                       --batch_size 512 \
+                       --step_ag 80 \
+                       --steps 30 70 110
+```
                 
