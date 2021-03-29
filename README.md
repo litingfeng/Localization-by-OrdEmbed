@@ -81,4 +81,6 @@ CUDA_VISIBLE_DEVICES=0 python train-joint.py \
                        --step_ag 80 \
                        --steps 30 70 110
 ```
+- __Visualize actions__: set path for dataloader, pretrained model and jointly trained models in 
+`visualize_actions_scale.ipynb` and run.
                 
