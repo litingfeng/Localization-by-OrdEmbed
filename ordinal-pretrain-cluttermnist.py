@@ -8,13 +8,13 @@ import os, wandb
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from util.utils import generate_boxes
+from util.transform import MyBoxScaleTransform
 from opts import parser
 from util.augmentations import Compose
 from util.data_aug import Resize
 import numpy as np
 from models.mnist_scale_model import Net
-from datasets.clutter_mnist_scale_anchor import MNIST_CoLoc
+from datasets.clutter_mnist_scale import MNIST_CoLoc
 
 DEBUG = False
 
@@ -23,20 +23,14 @@ def init_dataloader():
 
     train_transform = Compose([Resize(84)])
     test_transform = Compose([Resize(84)])
-
-    anchors = generate_boxes(base_size=4,
-                             feat_height=21, feat_width=21, img_size=84,
-                             feat_stride=4,
-                             ratios=np.linspace(0.5, 3.0, num=10),
-                             min_box_side=28,
-                             scales=np.array(range(7, 20)))
-    print('number of anchors for 84*84 image ', anchors.shape[0])
     trainset = MNIST_CoLoc(root='.', train=True, digit=args.digit,
                            datapath='/research/cbim/vast/tl601/Dataset/Synthesis_mnist',
-                           clutter=1, anchors=anchors, transform=train_transform)
+                           clutter=1, transform=train_transform,
+                           target_transform=MyBoxScaleTransform())
     testset = MNIST_CoLoc(root='.', train=False, digit=args.digit,
                           datapath='/research/cbim/vast/tl601/Dataset/Synthesis_mnist',
-                          clutter=1, anchors=anchors, transform=test_transform)
+                          clutter=1, transform=test_transform,
+                          target_transform=MyBoxScaleTransform())
 
     train_loader = torch.utils.data.DataLoader(
         trainset, batch_size=args.batch_size, shuffle=True, **kwargs)

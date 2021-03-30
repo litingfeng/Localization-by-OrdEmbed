@@ -1,6 +1,6 @@
 #  WANDB_MODE=dryrun
 CUDA_VISIBLE_DEVICES=0 python ordinal-pretrain-cluttermnist-scale.py \
-                       --savename cluttermnist_pretrain \
+                       --savename cluttermnist_scale_pretrain \
                        --digit 4 \
                        --batch_size 192 \
                        --epochs 50 \

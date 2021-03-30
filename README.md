@@ -4,6 +4,7 @@ ordinal embedding.
 
 ## Updates
 - __3/28/2021__: Add experiments for fixed size cluttered mnsit
+- __3/29/2021__: Add experiments for random size & aspect ratio cluttered mnsit
 
 ## Requirements
 - Python3
@@ -44,7 +45,7 @@ And there are 10 actions (the last red dot means stay):
 generate and save `npy` files for data and label. Then, below is an example of pretrain embedding network using digit 4 images. One could
 also directly run `./pretrain.sh`. They are the same.
 ```bash
-CUDA_VISIBLE_DEVICES=0 python ordinal-pretrain-cluttermnist-scale.py \
+CUDA_VISIBLE_DEVICES=0 python ordinal-pretrain-cluttermnist.py \
                        --savename cluttermnist_pretrain \
                        --digit 4 \
                        --batch_size 192 \
@@ -83,4 +84,23 @@ CUDA_VISIBLE_DEVICES=0 python train-joint.py \
 ```
 - __Visualize actions__: set path for dataloader, pretrained model and jointly trained models in 
 `visualize_actions_scale.ipynb` and run.
+
+## Random Size & Aspect Ratio Cluttered MNIST
+### Description
+In this section, the digit in each image become random size, from 28 to 28\*2.5=70. 
+And the range of aspect ratio for the train set is [0.35, 3.1]. See the below image 
+as an example.
+
+<img src="https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/example2.png" width="800" height="400">
+
+- __Learn ordinal embedding__: different from previous setting, to learn more efficiently, we use dense anchor
+sampling strategy. First generate dense anchors for each image. Then compute the IoUs with 
+groundtruth box and divide to 10 groups. For each batch, sample two IoUs, then sample anchor boxes from the 
+corresponding group. To train, generate dataset by running `clutter_mnist_scale_anchor.py`, then replace `ordinal-pretrain-cluttermnist.py` with `ordinal-pretrain-cluttermnist-scale.py`, and
+run `pretrain.sh`.
+- __Jointly train__: We have 4 more actions in this setting: wider, narrower, shorter, higher. 
+To train, uncomment [this part](https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/3d2962dca71519a02476e14122956dc71b9de774/datasets/clutter_mnist_scale_rl.py#L44), 
+and, change `num_act` to 14, and run `joint.sh`.  
+
+
                 
