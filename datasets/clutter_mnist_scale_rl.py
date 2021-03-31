@@ -35,16 +35,16 @@ class MNIST_CoLoc(datasets.MNIST):
         phase = 'train' if train else 'test'
         datadir = os.path.join(self.datapath, phase)
         if clutter == 1:
-            # # data with fixed size digit 28*28
-            # self.new_digit_data = np.load(os.path.join(datadir, 'moreclutter',
-            #                                            str(digit) + '_moreclutter_data.npy'))
-            # self.new_targets = np.load(os.path.join(datadir, 'moreclutter',
-            #                                         str(digit) + '_moreclutter_label.npy'))
-            # different scale and aspect ratio
-            self.new_digit_data = np.load(os.path.join(datadir, 'clutterScaleARLarger',
-                                                       str(digit) + '_clutterScaleARLarger_data.npy'))
-            self.new_targets = np.load(os.path.join(datadir, 'clutterScaleARLarger',
-                                                    str(digit) + '_clutterScaleARLarger_label.npy'))
+            # data with fixed size digit 28*28
+            self.new_digit_data = np.load(os.path.join(datadir, 'moreclutter',
+                                                       str(digit) + '_moreclutter_data.npy'))
+            self.new_targets = np.load(os.path.join(datadir, 'moreclutter',
+                                                    str(digit) + '_moreclutter_label.npy'))
+            # # different scale and aspect ratio
+            # self.new_digit_data = np.load(os.path.join(datadir, 'clutterScaleARLarger',
+            #                                            str(digit) + '_clutterScaleARLarger_data.npy'))
+            # self.new_targets = np.load(os.path.join(datadir, 'clutterScaleARLarger',
+            #                                         str(digit) + '_clutterScaleARLarger_label.npy'))
         self.new_targets = torch.from_numpy(self.new_targets)
 
     def __getitem__(self, index):

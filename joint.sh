@@ -1,7 +1,7 @@
 # WANDB_MODE=dryrun
-CUDA_VISIBLE_DEVICES=1 python train-joint.py \
-                       --savename cluttermnist_scale_joint \
-                       --pretrained cluttermnist_scale_pretrain/best.pth.tar \
+CUDA_VISIBLE_DEVICES=0 python train-joint.py \
+                       --savename cluttermnist_joint \
+                       --pretrained cluttermnist_pretrain/best.pth.tar \
                        --lr_ag 0.001 \
                        --lr 0.001 \
                        --pooling_mode align \

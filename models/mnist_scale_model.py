@@ -25,6 +25,7 @@ class Net(nn.Module):
             nn.Conv2d(10, 32, kernel_size=3, stride=2),
             nn.Conv2d(32, 64, kernel_size=3, stride=1),
             nn.Conv2d(64, 128, kernel_size=3, stride=1),
+            #nn.Conv2d(128, 128, kernel_size=3, stride=1),
         )
 
         if pooling_mode == 'pool':
