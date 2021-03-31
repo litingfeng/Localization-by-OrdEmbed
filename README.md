@@ -101,7 +101,7 @@ corresponding group. Add one more conv layer by uncommenting [this line](https:/
 run `pretrain.sh`.
 - __Jointly train__: We have 4 more actions in this setting: wider, narrower, shorter, higher. 
 To train, uncomment [this part](https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/3d2962dca71519a02476e14122956dc71b9de774/datasets/clutter_mnist_scale_rl.py#L44), 
-and, change `num_act` to 14, and run `joint.sh`.  
+and, change `num_act` to 14 and `step_ag` to 100, and run `joint.sh`.  
 
 
                 

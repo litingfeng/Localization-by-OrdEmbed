@@ -18,5 +18,5 @@ CUDA_VISIBLE_DEVICES=0 python train-joint.py \
                        --optimizer SGD \
                        --epochs 250 \
                        --batch_size 512 \
-                       --step_ag 100 \
+                       --step_ag 80 \
                        --steps 30 70 110
