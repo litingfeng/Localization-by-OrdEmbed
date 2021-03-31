@@ -96,7 +96,8 @@ as an example.
 - __Learn ordinal embedding__: different from previous setting, to learn more efficiently, we use dense anchor
 sampling strategy. First generate dense anchors for each image. Then compute the IoUs with 
 groundtruth box and divide to 10 groups. For each batch, sample two IoUs, then sample anchor boxes from the 
-corresponding group. To train, generate dataset by running `clutter_mnist_scale_anchor.py`, then replace `ordinal-pretrain-cluttermnist.py` with `ordinal-pretrain-cluttermnist-scale.py`, and
+corresponding group. Add one more conv layer by uncommenting [this line](https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/beddf3d64134e7ce2e7f73bdec5bce4ce4d2aa8f/models/mnist_scale_model.py#L28)
+.To train, generate dataset by running `clutter_mnist_scale_anchor.py`, then replace `ordinal-pretrain-cluttermnist.py` with `ordinal-pretrain-cluttermnist-scale.py`, and
 run `pretrain.sh`.
 - __Jointly train__: We have 4 more actions in this setting: wider, narrower, shorter, higher. 
 To train, uncomment [this part](https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/3d2962dca71519a02476e14122956dc71b9de774/datasets/clutter_mnist_scale_rl.py#L44), 
