@@ -1,0 +1,104 @@
+nohup: ignoring input
+wandb: Currently logged in as: amberberli (use `wandb login --relogin` to force relogin)
+wandb: wandb version 0.10.30 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.10.9
+wandb: Syncing run ordinal_ae_proj_seq10_ent6_lr1e03_stp80_50_digit3_randpatch_shufprotoemb_shufprotoRew_supp5
+wandb: ⭐️ View project at https://wandb.ai/amberberli/selfpaced
+wandb: 🚀 View run at https://wandb.ai/amberberli/selfpaced/runs/320zq0r6
+wandb: Run data is saved locally in wandb/run-20210519_150651-320zq0r6
+wandb: Run `wandb off` to turn off syncing.
+loading random_patch data... 
+loading random_patch data... 
+total train image:  50  test image:  1010
+load  encoder.0.weight
+load  encoder.0.bias
+load  encoder.2.weight
+load  encoder.2.bias
+load  encoder.4.weight
+load  encoder.4.bias
+load  RCNN_top.0.weight
+load  RCNN_top.0.bias
+load  RCNN_top.3.weight
+load  RCNN_top.3.bias
+loaded from pretrain_ae_ord_proj_50_lr1e03_scp5_digit3_lamb01_randpatch_stp80_shuffle_proto/last.pth.tar
+ckpt epoch 149 acc 92.77%
+loading net ckpt from  /research/cbim/vast/tl601/results/selfpaced/ordinal/ordinal_ae_proj_seq10_ent6_lr1e03_stp80_50_digit3_randpatch_shufprotoemb_shufprotoRew_supp5/best.pth.tar
+=> loaded agent checkpoint epoch 227 98.0197982788086
+loading random_patch data... 
+/research/cbim/vast/tl601/anaconda3/envs/torch_ml/lib/python3.6/site-packages/torch/nn/functional.py:3063: UserWarning: Default upsampling behavior when mode=bilinear is changed to align_corners=False since 0.4.0. Please specify align_corners=True if the old behavior is desired. See the documentation of nn.Upsample for details.
+  "See the documentation of nn.Upsample for details.".format(mode))
+
+
+Test Epoch: 0 [0/980 (0%)]	Reward: 53.9703
+Test Epoch: 0 [500/980 (50%)]	Reward: 54.5359
+0  test_acc  tensor(97.6531)
+loading random_patch data... 
+
+
+Test Epoch: 0 [0/1135 (0%)]	Reward: 25.7831
+Test Epoch: 0 [500/1135 (43%)]	Reward: 27.0957
+Test Epoch: 0 [1000/1135 (87%)]	Reward: 30.3243
+1  test_acc  tensor(85.9912)
+loading random_patch data... 
+
+
+Test Epoch: 0 [0/1032 (0%)]	Reward: 50.3290
+Test Epoch: 0 [500/1032 (48%)]	Reward: 49.8698
+Test Epoch: 0 [600/1032 (95%)]	Reward: 50.3132
+2  test_acc  tensor(95.4457)
+loading random_patch data... 
+
+
+Test Epoch: 0 [0/1010 (0%)]	Reward: 48.6194
+Test Epoch: 0 [500/1010 (48%)]	Reward: 51.7438
+Test Epoch: 0 [200/1010 (95%)]	Reward: 53.3765
+3  test_acc  tensor(95.8416)
+loading random_patch data... 
+
+
+Test Epoch: 0 [0/982 (0%)]	Reward: 42.6450
+Test Epoch: 0 [500/982 (50%)]	Reward: 41.9270
+4  test_acc  tensor(96.6395)
+loading random_patch data... 
+
+
+Test Epoch: 0 [0/892 (0%)]	Reward: 48.4210
+Test Epoch: 0 [500/892 (56%)]	Reward: 49.9592
+5  test_acc  tensor(96.8610)
+loading random_patch data... 
+
+
+Test Epoch: 0 [0/958 (0%)]	Reward: 45.2154
+Test Epoch: 0 [500/958 (50%)]	Reward: 45.0389
+6  test_acc  tensor(95.0939)
+loading random_patch data... 
+
+
+Test Epoch: 0 [0/1028 (0%)]	Reward: 45.6850
+Test Epoch: 0 [500/1028 (48%)]	Reward: 42.6396
+Test Epoch: 0 [500/1028 (95%)]	Reward: 44.8486
+7  test_acc  tensor(94.4553)
+loading random_patch data... 
+
+
+Test Epoch: 0 [0/974 (0%)]	Reward: 48.3758
+Test Epoch: 0 [500/974 (50%)]	Reward: 48.4449
+8  test_acc  tensor(94.6612)
+loading random_patch data... 
+
+
+Test Epoch: 0 [0/1009 (0%)]	Reward: 44.5232
+Test Epoch: 0 [500/1009 (48%)]	Reward: 43.5420
+Test Epoch: 0 [100/1009 (95%)]	Reward: 44.7643
+9  test_acc  tensor(95.9366)
+mean acc  94.74861
+wandb: Waiting for W&B process to finish, PID 4789
+wandb: Program ended successfully.
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Find user logs for this run at: wandb/run-20210519_150651-320zq0r6/logs/debug.log
+wandb: Find internal logs for this run at: wandb/run-20210519_150651-320zq0r6/logs/debug-internal.log
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: 
+wandb: Synced ordinal_ae_proj_seq10_ent6_lr1e03_stp80_50_digit3_randpatch_shufprotoemb_shufprotoRew_supp5: https://wandb.ai/amberberli/selfpaced/runs/320zq0r6
+

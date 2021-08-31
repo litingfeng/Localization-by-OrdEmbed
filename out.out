@@ -1,0 +1,69 @@
+nohup: ignoring input
+wandb: Currently logged in as: amberberli (use `wandb login --relogin` to force relogin)
+wandb: wandb version 0.10.24 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.10.9
+wandb: Syncing run baseline_dqn
+wandb: ⭐️ View project at https://wandb.ai/amberberli/selfpaced
+wandb: 🚀 View run at https://wandb.ai/amberberli/selfpaced/runs/l5dnf96d
+wandb: Run data is saved locally in wandb/run-20210331_222051-l5dnf96d
+wandb: Run `wandb off` to turn off syncing.
+total train image:  5842  test image:  982
+loaded pretained MNIST encoder
+freezing embedding net
+/research/cbim/vast/tl601/anaconda3/envs/torch_ml/lib/python3.6/site-packages/torch/optim/lr_scheduler.py:136: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+Traceback (most recent call last):
+  File "baseline-DQN.py", line 236, in <module>
+    epsilons = np.linspace(args.eps_start, args.eps_end, args.eps_decay_steps)
+  File "baseline-DQN.py", line 108, in feed_data
+    for batch_idx, (data, target) in enumerate(data_loader):
+  File "/research/cbim/vast/tl601/anaconda3/envs/torch_ml/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 435, in __next__
+    data = self._next_data()
+  File "/research/cbim/vast/tl601/anaconda3/envs/torch_ml/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 1057, in _next_data
+    self._shutdown_workers()
+  File "/research/cbim/vast/tl601/anaconda3/envs/torch_ml/lib/python3.6/site-packages/torch/utils/data/dataloader.py", line 1177, in _shutdown_workers
+    w.join(timeout=_utils.MP_STATUS_CHECK_INTERVAL)
+  File "/research/cbim/vast/tl601/anaconda3/envs/torch_ml/lib/python3.6/multiprocessing/process.py", line 124, in join
+    res = self._popen.wait(timeout)
+  File "/research/cbim/vast/tl601/anaconda3/envs/torch_ml/lib/python3.6/multiprocessing/popen_fork.py", line 47, in wait
+    if not wait([self.sentinel], timeout):
+  File "/research/cbim/vast/tl601/anaconda3/envs/torch_ml/lib/python3.6/multiprocessing/connection.py", line 911, in wait
+    ready = selector.select(timeout)
+  File "/research/cbim/vast/tl601/anaconda3/envs/torch_ml/lib/python3.6/selectors.py", line 376, in select
+    fd_event_list = self._poll.poll(timeout)
+KeyboardInterrupt
+wandb: Waiting for W&B process to finish, PID 42253
+wandb: Program failed with code 255.  Press ctrl-c to abort syncing.
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.01MB of 0.01MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Find user logs for this run at: wandb/run-20210331_222051-l5dnf96d/logs/debug.log
+wandb: Find internal logs for this run at: wandb/run-20210331_222051-l5dnf96d/logs/debug-internal.log
+wandb: Run summary:
+wandb:      Train Rewards -5.46029
+wandb:   Train Eps Length 9.91527
+wandb:      Train Loc Acc 0.02482
+wandb:      learning rate 0.001
+wandb:     Train Pol Loss 0.0
+wandb:       Test Rewards -5.6446
+wandb:    Test Eps Length 10.19654
+wandb:       Test Loc Acc 0.02648
+wandb:              _step 23
+wandb:           _runtime 2699
+wandb:         _timestamp 1617246350
+wandb: Run history:
+wandb:      Train Rewards ▁▃▅▅▆▅▆▅▄▄▇▃▅▄█▃▄▆▂▃▂▂▆▄
+wandb:   Train Eps Length █▆▅▄▃▃▅█▇▅▃▅▆▆▁▇▆▄▆▅▆▇▄▅
+wandb:      Train Loc Acc ▃▃▄▄▅▂▅▆▇▄▆▆▅▁▅█▇▃▅▄▇▅▆▂
+wandb:      learning rate ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:     Train Pol Loss ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:       Test Rewards ▄▃▆▅▆▃▆▇▅▅▄▃▆▆▃▆▇█▂▁██▂▃
+wandb:    Test Eps Length █▆▄▄▄█▃▆▃▅▇▆▅▅▆▃▃▁▆█▂▂▇▆
+wandb:       Test Loc Acc ▇▃▅▅▃█▇▅▃█▆▄▅▄▃▅▅▃▅▅▁▃▃▄
+wandb:              _step ▁▁▂▂▂▃▃▃▃▄▄▄▅▅▅▆▆▆▆▇▇▇██
+wandb:           _runtime ▁▁▂▂▂▃▃▃▃▄▄▄▅▅▅▆▆▆▆▇▇▇██
+wandb:         _timestamp ▁▁▂▂▂▃▃▃▃▄▄▄▅▅▅▆▆▆▆▇▇▇██
+wandb: 
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: 
+wandb: Synced baseline_dqn: https://wandb.ai/amberberli/selfpaced/runs/l5dnf96d
+

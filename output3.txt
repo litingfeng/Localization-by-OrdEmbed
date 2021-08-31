@@ -1,0 +1,782 @@
+nohup: ignoring input
+wandb: Currently logged in as: amberberli (use `wandb login --relogin` to force relogin)
+wandb: wandb version 0.10.31 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.10.9
+wandb: Syncing run finetune_cub_ent05_warbler15_supp200_oriole_freezeall1024_r2
+wandb: ⭐️ View project at https://wandb.ai/amberberli/selfpaced
+wandb: 🚀 View run at https://wandb.ai/amberberli/selfpaced/runs/195ok3jn
+wandb: Run data is saved locally in wandb/run-20210604_112911-195ok3jn
+wandb: Run `wandb off` to turn off syncing.
+loading oriole_95_98.json...
+val images 239 labels 4
+total train image:  239
+Loading pretrained weights from /research/cbim/vast/tl601/projects/selfpaced/vgg16_caffe.pth
+loaded from pretrain_vgg_ord_cub_fewshot_lr1e03_spc5_cps5_img224_warbler_shufproto_warb15_dim1024_freezeall/last.pth.tar
+ckpt epoch 149 acc inst 87.59%
+loading ckpt from  /research/cbim/vast/tl601/results/selfpaced/ordinal/ordinal_vgg_cub_seq10_ent05_lr1e03_stp80_shufprotshufprot_min40_warb15_dim1024freezeall/best.pth.tar
+=> loaded checkpoint epoch 139 88.27586364746094
+/research/cbim/vast/tl601/anaconda3/envs/torch_ml/lib/python3.6/site-packages/torch/nn/functional.py:3063: UserWarning: Default upsampling behavior when mode=bilinear is changed to align_corners=False since 0.4.0. Please specify align_corners=True if the old behavior is desired. See the documentation of nn.Upsample for details.
+  "See the documentation of nn.Upsample for details.".format(mode))
+
+
+Test Epoch: 0 [0/239 (0%)]	Reward: 11.8875
+before finetune... acc  tensor(77.8243)
+
+
+Train Epoch: 0 [0/239 (0%)]	Reward: 11.9187
+
+
+Test Epoch: 0 [0/239 (0%)]	Reward: 12.0708
+
+
+Train Epoch: 1 [0/239 (0%)]	Reward: 10.9132
+
+
+Test Epoch: 1 [0/239 (0%)]	Reward: 11.8374
+
+
+Train Epoch: 2 [0/239 (0%)]	Reward: 12.2696
+
+
+Test Epoch: 2 [0/239 (0%)]	Reward: 11.0616
+
+
+Train Epoch: 3 [0/239 (0%)]	Reward: 11.5425
+
+
+Test Epoch: 3 [0/239 (0%)]	Reward: 11.3183
+
+
+Train Epoch: 4 [0/239 (0%)]	Reward: 13.2505
+
+
+Test Epoch: 4 [0/239 (0%)]	Reward: 11.2874
+
+
+Train Epoch: 5 [0/239 (0%)]	Reward: 11.8114
+
+
+Test Epoch: 5 [0/239 (0%)]	Reward: 11.2814
+
+
+Train Epoch: 6 [0/239 (0%)]	Reward: 12.4198
+
+
+Test Epoch: 6 [0/239 (0%)]	Reward: 12.3710
+
+
+Train Epoch: 7 [0/239 (0%)]	Reward: 12.3365
+
+
+Test Epoch: 7 [0/239 (0%)]	Reward: 12.4781
+
+
+Train Epoch: 8 [0/239 (0%)]	Reward: 10.3642
+
+
+Test Epoch: 8 [0/239 (0%)]	Reward: 12.3542
+
+
+Train Epoch: 9 [0/239 (0%)]	Reward: 12.4630
+
+
+Test Epoch: 9 [0/239 (0%)]	Reward: 13.1403
+
+
+Train Epoch: 10 [0/239 (0%)]	Reward: 11.0927
+
+
+Test Epoch: 10 [0/239 (0%)]	Reward: 13.1613
+
+
+Train Epoch: 11 [0/239 (0%)]	Reward: 12.9055
+
+
+Test Epoch: 11 [0/239 (0%)]	Reward: 11.9842
+
+
+Train Epoch: 12 [0/239 (0%)]	Reward: 13.4126
+
+
+Test Epoch: 12 [0/239 (0%)]	Reward: 10.9504
+
+
+Train Epoch: 13 [0/239 (0%)]	Reward: 12.7886
+
+
+Test Epoch: 13 [0/239 (0%)]	Reward: 12.2968
+
+
+Train Epoch: 14 [0/239 (0%)]	Reward: 13.1586
+
+
+Test Epoch: 14 [0/239 (0%)]	Reward: 11.6586
+
+
+Train Epoch: 15 [0/239 (0%)]	Reward: 13.0920
+
+
+Test Epoch: 15 [0/239 (0%)]	Reward: 12.1591
+
+
+Train Epoch: 16 [0/239 (0%)]	Reward: 12.9371
+
+
+Test Epoch: 16 [0/239 (0%)]	Reward: 12.9480
+
+
+Train Epoch: 17 [0/239 (0%)]	Reward: 10.9545
+
+
+Test Epoch: 17 [0/239 (0%)]	Reward: 11.4645
+
+
+Train Epoch: 18 [0/239 (0%)]	Reward: 12.4143
+
+
+Test Epoch: 18 [0/239 (0%)]	Reward: 11.9703
+
+
+Train Epoch: 19 [0/239 (0%)]	Reward: 11.0772
+
+
+Test Epoch: 19 [0/239 (0%)]	Reward: 12.5730
+
+
+Train Epoch: 20 [0/239 (0%)]	Reward: 11.9068
+
+
+Test Epoch: 20 [0/239 (0%)]	Reward: 10.8006
+
+
+Train Epoch: 21 [0/239 (0%)]	Reward: 12.3452
+
+
+Test Epoch: 21 [0/239 (0%)]	Reward: 12.3366
+
+
+Train Epoch: 22 [0/239 (0%)]	Reward: 12.2573
+
+
+Test Epoch: 22 [0/239 (0%)]	Reward: 12.7222
+
+
+Train Epoch: 23 [0/239 (0%)]	Reward: 12.2309
+
+
+Test Epoch: 23 [0/239 (0%)]	Reward: 12.4281
+
+
+Train Epoch: 24 [0/239 (0%)]	Reward: 11.9751
+
+
+Test Epoch: 24 [0/239 (0%)]	Reward: 12.4220
+
+
+Train Epoch: 25 [0/239 (0%)]	Reward: 13.0700
+
+
+Test Epoch: 25 [0/239 (0%)]	Reward: 11.5869
+
+
+Train Epoch: 26 [0/239 (0%)]	Reward: 11.9943
+
+
+Test Epoch: 26 [0/239 (0%)]	Reward: 12.3345
+
+
+Train Epoch: 27 [0/239 (0%)]	Reward: 11.6853
+
+
+Test Epoch: 27 [0/239 (0%)]	Reward: 12.0738
+
+
+Train Epoch: 28 [0/239 (0%)]	Reward: 12.0930
+
+
+Test Epoch: 28 [0/239 (0%)]	Reward: 11.4459
+
+
+Train Epoch: 29 [0/239 (0%)]	Reward: 11.7402
+
+
+Test Epoch: 29 [0/239 (0%)]	Reward: 14.2216
+
+
+Train Epoch: 30 [0/239 (0%)]	Reward: 12.8744
+
+
+Test Epoch: 30 [0/239 (0%)]	Reward: 13.3813
+
+
+Train Epoch: 31 [0/239 (0%)]	Reward: 11.9745
+
+
+Test Epoch: 31 [0/239 (0%)]	Reward: 12.7272
+
+
+Train Epoch: 32 [0/239 (0%)]	Reward: 12.2922
+
+
+Test Epoch: 32 [0/239 (0%)]	Reward: 12.5996
+
+
+Train Epoch: 33 [0/239 (0%)]	Reward: 12.8720
+
+
+Test Epoch: 33 [0/239 (0%)]	Reward: 12.0963
+
+
+Train Epoch: 34 [0/239 (0%)]	Reward: 11.0376
+
+
+Test Epoch: 34 [0/239 (0%)]	Reward: 12.3089
+
+
+Train Epoch: 35 [0/239 (0%)]	Reward: 11.7068
+
+
+Test Epoch: 35 [0/239 (0%)]	Reward: 13.8185
+
+
+Train Epoch: 36 [0/239 (0%)]	Reward: 13.0281
+
+
+Test Epoch: 36 [0/239 (0%)]	Reward: 12.0171
+
+
+Train Epoch: 37 [0/239 (0%)]	Reward: 12.4533
+
+
+Test Epoch: 37 [0/239 (0%)]	Reward: 11.8273
+
+
+Train Epoch: 38 [0/239 (0%)]	Reward: 13.6646
+
+
+Test Epoch: 38 [0/239 (0%)]	Reward: 12.3924
+
+
+Train Epoch: 39 [0/239 (0%)]	Reward: 11.8382
+
+
+Test Epoch: 39 [0/239 (0%)]	Reward: 12.2965
+
+
+Train Epoch: 40 [0/239 (0%)]	Reward: 12.5511
+
+
+Test Epoch: 40 [0/239 (0%)]	Reward: 14.0035
+
+
+Train Epoch: 41 [0/239 (0%)]	Reward: 12.4044
+
+
+Test Epoch: 41 [0/239 (0%)]	Reward: 11.9279
+
+
+Train Epoch: 42 [0/239 (0%)]	Reward: 12.2481
+
+
+Test Epoch: 42 [0/239 (0%)]	Reward: 11.1653
+
+
+Train Epoch: 43 [0/239 (0%)]	Reward: 12.4230
+
+
+Test Epoch: 43 [0/239 (0%)]	Reward: 10.5018
+
+
+Train Epoch: 44 [0/239 (0%)]	Reward: 13.4778
+
+
+Test Epoch: 44 [0/239 (0%)]	Reward: 12.2325
+
+
+Train Epoch: 45 [0/239 (0%)]	Reward: 13.0775
+
+
+Test Epoch: 45 [0/239 (0%)]	Reward: 12.3073
+
+
+Train Epoch: 46 [0/239 (0%)]	Reward: 13.8279
+
+
+Test Epoch: 46 [0/239 (0%)]	Reward: 13.9003
+
+
+Train Epoch: 47 [0/239 (0%)]	Reward: 13.4742
+
+
+Test Epoch: 47 [0/239 (0%)]	Reward: 12.2611
+
+
+Train Epoch: 48 [0/239 (0%)]	Reward: 10.2475
+
+
+Test Epoch: 48 [0/239 (0%)]	Reward: 13.0054
+
+
+Train Epoch: 49 [0/239 (0%)]	Reward: 11.9530
+
+
+Test Epoch: 49 [0/239 (0%)]	Reward: 12.4133
+
+
+Train Epoch: 50 [0/239 (0%)]	Reward: 13.1397
+
+
+Test Epoch: 50 [0/239 (0%)]	Reward: 13.6536
+
+
+Train Epoch: 51 [0/239 (0%)]	Reward: 12.5371
+
+
+Test Epoch: 51 [0/239 (0%)]	Reward: 13.2063
+
+
+Train Epoch: 52 [0/239 (0%)]	Reward: 12.1963
+
+
+Test Epoch: 52 [0/239 (0%)]	Reward: 12.3808
+
+
+Train Epoch: 53 [0/239 (0%)]	Reward: 12.4110
+
+
+Test Epoch: 53 [0/239 (0%)]	Reward: 13.1289
+
+
+Train Epoch: 54 [0/239 (0%)]	Reward: 12.1506
+
+
+Test Epoch: 54 [0/239 (0%)]	Reward: 13.2534
+
+
+Train Epoch: 55 [0/239 (0%)]	Reward: 12.2115
+
+
+Test Epoch: 55 [0/239 (0%)]	Reward: 13.5518
+
+
+Train Epoch: 56 [0/239 (0%)]	Reward: 11.4515
+
+
+Test Epoch: 56 [0/239 (0%)]	Reward: 11.2752
+
+
+Train Epoch: 57 [0/239 (0%)]	Reward: 13.9534
+
+
+Test Epoch: 57 [0/239 (0%)]	Reward: 14.0207
+
+
+Train Epoch: 58 [0/239 (0%)]	Reward: 13.7425
+
+
+Test Epoch: 58 [0/239 (0%)]	Reward: 12.6911
+
+
+Train Epoch: 59 [0/239 (0%)]	Reward: 12.3469
+
+
+Test Epoch: 59 [0/239 (0%)]	Reward: 12.1230
+
+
+Train Epoch: 60 [0/239 (0%)]	Reward: 13.3199
+
+
+Test Epoch: 60 [0/239 (0%)]	Reward: 12.9064
+
+
+Train Epoch: 61 [0/239 (0%)]	Reward: 13.0890
+
+
+Test Epoch: 61 [0/239 (0%)]	Reward: 12.9916
+
+
+Train Epoch: 62 [0/239 (0%)]	Reward: 13.9811
+
+
+Test Epoch: 62 [0/239 (0%)]	Reward: 12.8317
+
+
+Train Epoch: 63 [0/239 (0%)]	Reward: 12.0115
+
+
+Test Epoch: 63 [0/239 (0%)]	Reward: 12.7694
+
+
+Train Epoch: 64 [0/239 (0%)]	Reward: 13.8247
+
+
+Test Epoch: 64 [0/239 (0%)]	Reward: 11.4327
+
+
+Train Epoch: 65 [0/239 (0%)]	Reward: 12.2102
+
+
+Test Epoch: 65 [0/239 (0%)]	Reward: 13.4449
+
+
+Train Epoch: 66 [0/239 (0%)]	Reward: 12.8197
+
+
+Test Epoch: 66 [0/239 (0%)]	Reward: 12.4981
+
+
+Train Epoch: 67 [0/239 (0%)]	Reward: 10.9999
+
+
+Test Epoch: 67 [0/239 (0%)]	Reward: 13.3024
+
+
+Train Epoch: 68 [0/239 (0%)]	Reward: 12.2243
+
+
+Test Epoch: 68 [0/239 (0%)]	Reward: 12.0685
+
+
+Train Epoch: 69 [0/239 (0%)]	Reward: 13.4548
+
+
+Test Epoch: 69 [0/239 (0%)]	Reward: 11.7247
+
+
+Train Epoch: 70 [0/239 (0%)]	Reward: 12.5602
+
+
+Test Epoch: 70 [0/239 (0%)]	Reward: 14.8686
+
+
+Train Epoch: 71 [0/239 (0%)]	Reward: 12.3261
+
+
+Test Epoch: 71 [0/239 (0%)]	Reward: 11.5262
+
+
+Train Epoch: 72 [0/239 (0%)]	Reward: 12.2256
+
+
+Test Epoch: 72 [0/239 (0%)]	Reward: 11.5897
+
+
+Train Epoch: 73 [0/239 (0%)]	Reward: 10.9076
+
+
+Test Epoch: 73 [0/239 (0%)]	Reward: 13.4019
+
+
+Train Epoch: 74 [0/239 (0%)]	Reward: 11.6733
+
+
+Test Epoch: 74 [0/239 (0%)]	Reward: 12.0459
+
+
+Train Epoch: 75 [0/239 (0%)]	Reward: 12.2428
+
+
+Test Epoch: 75 [0/239 (0%)]	Reward: 12.4324
+
+
+Train Epoch: 76 [0/239 (0%)]	Reward: 13.3534
+
+
+Test Epoch: 76 [0/239 (0%)]	Reward: 13.2919
+
+
+Train Epoch: 77 [0/239 (0%)]	Reward: 12.5115
+
+
+Test Epoch: 77 [0/239 (0%)]	Reward: 12.0816
+
+
+Train Epoch: 78 [0/239 (0%)]	Reward: 13.2814
+
+
+Test Epoch: 78 [0/239 (0%)]	Reward: 10.9454
+
+
+Train Epoch: 79 [0/239 (0%)]	Reward: 13.6742
+
+
+Test Epoch: 79 [0/239 (0%)]	Reward: 12.9000
+
+
+Train Epoch: 80 [0/239 (0%)]	Reward: 12.9990
+
+
+Test Epoch: 80 [0/239 (0%)]	Reward: 13.9349
+
+
+Train Epoch: 81 [0/239 (0%)]	Reward: 12.7738
+
+
+Test Epoch: 81 [0/239 (0%)]	Reward: 13.0047
+
+
+Train Epoch: 82 [0/239 (0%)]	Reward: 11.6470
+
+
+Test Epoch: 82 [0/239 (0%)]	Reward: 13.8955
+
+
+Train Epoch: 83 [0/239 (0%)]	Reward: 13.0601
+
+
+Test Epoch: 83 [0/239 (0%)]	Reward: 13.1862
+
+
+Train Epoch: 84 [0/239 (0%)]	Reward: 12.9338
+
+
+Test Epoch: 84 [0/239 (0%)]	Reward: 13.1876
+
+
+Train Epoch: 85 [0/239 (0%)]	Reward: 12.2485
+
+
+Test Epoch: 85 [0/239 (0%)]	Reward: 11.6198
+
+
+Train Epoch: 86 [0/239 (0%)]	Reward: 12.3970
+
+
+Test Epoch: 86 [0/239 (0%)]	Reward: 12.4138
+
+
+Train Epoch: 87 [0/239 (0%)]	Reward: 11.2598
+
+
+Test Epoch: 87 [0/239 (0%)]	Reward: 13.1429
+
+
+Train Epoch: 88 [0/239 (0%)]	Reward: 14.0242
+
+
+Test Epoch: 88 [0/239 (0%)]	Reward: 12.4439
+
+
+Train Epoch: 89 [0/239 (0%)]	Reward: 13.2767
+
+
+Test Epoch: 89 [0/239 (0%)]	Reward: 13.5727
+
+
+Train Epoch: 90 [0/239 (0%)]	Reward: 13.0025
+
+
+Test Epoch: 90 [0/239 (0%)]	Reward: 13.5981
+
+
+Train Epoch: 91 [0/239 (0%)]	Reward: 12.7507
+
+
+Test Epoch: 91 [0/239 (0%)]	Reward: 12.2882
+
+
+Train Epoch: 92 [0/239 (0%)]	Reward: 13.8308
+
+
+Test Epoch: 92 [0/239 (0%)]	Reward: 12.4396
+
+
+Train Epoch: 93 [0/239 (0%)]	Reward: 12.6263
+
+
+Test Epoch: 93 [0/239 (0%)]	Reward: 13.7824
+
+
+Train Epoch: 94 [0/239 (0%)]	Reward: 12.4416
+
+
+Test Epoch: 94 [0/239 (0%)]	Reward: 11.8075
+
+
+Train Epoch: 95 [0/239 (0%)]	Reward: 12.4731
+
+
+Test Epoch: 95 [0/239 (0%)]	Reward: 13.3852
+
+
+Train Epoch: 96 [0/239 (0%)]	Reward: 14.1242
+
+
+Test Epoch: 96 [0/239 (0%)]	Reward: 12.3708
+
+
+Train Epoch: 97 [0/239 (0%)]	Reward: 12.8913
+
+
+Test Epoch: 97 [0/239 (0%)]	Reward: 12.4584
+
+
+Train Epoch: 98 [0/239 (0%)]	Reward: 12.9605
+
+
+Test Epoch: 98 [0/239 (0%)]	Reward: 14.6134
+
+
+Train Epoch: 99 [0/239 (0%)]	Reward: 13.0324
+
+
+Test Epoch: 99 [0/239 (0%)]	Reward: 12.4366
+
+
+Train Epoch: 100 [0/239 (0%)]	Reward: 12.7484
+
+
+Test Epoch: 100 [0/239 (0%)]	Reward: 12.9063
+
+
+Train Epoch: 101 [0/239 (0%)]	Reward: 12.2246
+
+
+Test Epoch: 101 [0/239 (0%)]	Reward: 12.2025
+
+
+Train Epoch: 102 [0/239 (0%)]	Reward: 12.1298
+
+
+Test Epoch: 102 [0/239 (0%)]	Reward: 12.3431
+
+
+Train Epoch: 103 [0/239 (0%)]	Reward: 12.8746
+
+
+Test Epoch: 103 [0/239 (0%)]	Reward: 12.1149
+
+
+Train Epoch: 104 [0/239 (0%)]	Reward: 15.3952
+
+
+Test Epoch: 104 [0/239 (0%)]	Reward: 11.5991
+
+
+Train Epoch: 105 [0/239 (0%)]	Reward: 13.4759
+
+
+Test Epoch: 105 [0/239 (0%)]	Reward: 12.7525
+
+
+Train Epoch: 106 [0/239 (0%)]	Reward: 12.6264
+
+
+Test Epoch: 106 [0/239 (0%)]	Reward: 13.1455
+
+
+Train Epoch: 107 [0/239 (0%)]	Reward: 14.0433
+
+
+Test Epoch: 107 [0/239 (0%)]	Reward: 12.7539
+
+
+Train Epoch: 108 [0/239 (0%)]	Reward: 13.0091
+
+
+Test Epoch: 108 [0/239 (0%)]	Reward: 13.4091
+
+
+Train Epoch: 109 [0/239 (0%)]	Reward: 13.4124
+
+
+Test Epoch: 109 [0/239 (0%)]	Reward: 13.1922
+
+
+Train Epoch: 110 [0/239 (0%)]	Reward: 13.2802
+
+
+Test Epoch: 110 [0/239 (0%)]	Reward: 12.5574
+
+
+Train Epoch: 111 [0/239 (0%)]	Reward: 12.5397
+
+
+Test Epoch: 111 [0/239 (0%)]	Reward: 11.1063
+
+
+Train Epoch: 112 [0/239 (0%)]	Reward: 13.4660
+
+
+Test Epoch: 112 [0/239 (0%)]	Reward: 13.1028
+
+
+Train Epoch: 113 [0/239 (0%)]	Reward: 13.4562
+
+
+Test Epoch: 113 [0/239 (0%)]	Reward: 12.6372
+
+
+Train Epoch: 114 [0/239 (0%)]	Reward: 11.8261
+
+
+Test Epoch: 114 [0/239 (0%)]	Reward: 13.7205
+
+
+Train Epoch: 115 [0/239 (0%)]	Reward: 10.7713
+
+
+Test Epoch: 115 [0/239 (0%)]	Reward: 14.5575
+
+
+Train Epoch: 116 [0/239 (0%)]	Reward: 13.4469
+
+
+Test Epoch: 116 [0/239 (0%)]	Reward: 13.0518
+
+
+Train Epoch: 117 [0/239 (0%)]	Reward: 12.7700
+
+
+Test Epoch: 117 [0/239 (0%)]	Reward: 13.4714
+
+
+Train Epoch: 118 [0/239 (0%)]	Reward: 12.1732
+
+
+Test Epoch: 118 [0/239 (0%)]	Reward: 12.1526
+stop training...
+loading net ckpt from  /research/cbim/vast/tl601/results/selfpaced/ordinal/finetune_cub_ent05_warbler15_supp200_oriole_freezeall1024_r2/best.pth.tar
+=> loaded agent checkpoint epoch 17 83.6820068359375
+
+
+Test Epoch: 118 [0/239 (0%)]	Reward: 12.4207
+after finetuning train_acc  tensor(79.9163)
+wandb: Waiting for W&B process to finish, PID 15310
+wandb: Program ended successfully.
+wandb: - 0.00MB of 0.00MB uploaded (0.00MB deduped)wandb: \ 0.03MB of 0.03MB uploaded (0.00MB deduped)wandb:                                                                                
+wandb: Find user logs for this run at: wandb/run-20210604_112911-195ok3jn/logs/debug.log
+wandb: Find internal logs for this run at: wandb/run-20210604_112911-195ok3jn/logs/debug-internal.log
+wandb: Run summary:
+wandb:             Test Pol Loss -947.811
+wandb:              Test Rewards 12.82728
+wandb:              Test Loc Acc 81.17155
+wandb:             Test Ent Loss 411.0714
+wandb:            Train Pol Loss 291.58527
+wandb:             Train Rewards 12.98134
+wandb:             Train Loc Acc 81.17155
+wandb:            Train Ent Loss 409.41336
+wandb:             learning rate 0.0001
+wandb:                     _step 118
+wandb:                  _runtime 557
+wandb:                _timestamp 1622821109
+wandb:         Test Best Loc Acc 83.68201
+wandb: Run history:
+wandb:    Test Pol Loss ▄▃▂▂▃▄▃▅▄█▆▇▅▅▂▄▄█▅▂▁▄▃▃▃▅▅▇▄▄▂▅▅▅▄▄▄▃▄▄
+wandb:     Test Rewards ▁▃▃▃▅▅▃▁▃▄▂▄▅▆▃▆▇▇▅▅▆▃▆▇▄▆▆▇▅▆▇▆█▆▇▇▇▇█▇
+wandb:     Test Loc Acc ▁▄▂▃▆▆▄▂▅▅▅▄▇▆▁█▆█▆▆▆█▆▇▅█▅▆▃▄▇▅▇▅▇▅█▆▆▇
+wandb:    Test Ent Loss ▃▃▃▂▁▁▃▄▄▄▆▇█▆▄▃▃▅▄▅▅▆▆▅▆▆▆▆▆▆▆▆▆▆▆▆▆▆▅▆
+wandb:   Train Pol Loss ▄▄▁▃▄▄▇▃▅▅▇█▂▃▂▄▄▇▅▂▂▃▃▄▆▄▅█▄▃▃▇▅▅▄▃▂▃▄▇
+wandb:    Train Rewards ▁▃▁▃▄▄▅▁▃▄▂▄▃▄▂▃▇▆▇▆▅▄▅▅▅▆▆▆▆▇▇▆▆▇█▆▇▇▇█
+wandb:    Train Loc Acc ▁▂▄▄▄▃▅▁▃▃▅▇▄▁▂▄▆▆▆▄▂▄▆▅█▇▃▃▄▂▆▃▆▄▇▆▇▅▅▅
+wandb:   Train Ent Loss ▃▃▃▂▁▁▂▃▃▄▅▆█▆▄▃▃▄▄▄▄▅▆▅▆▅▅▅▆▆▆▆▆▆▆▆▆▅▅▅
+wandb:    learning rate ███████████████████████████▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:            _step ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:         _runtime ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:       _timestamp ▁▁▁▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb: 
+wandb: Synced 5 W&B file(s), 1 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: 
+wandb: Synced finetune_cub_ent05_warbler15_supp200_oriole_freezeall1024_r2: https://wandb.ai/amberberli/selfpaced/runs/195ok3jn
+
