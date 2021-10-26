@@ -191,7 +191,7 @@ CUDA_VISIBLE_DEVICES=6 python adapt_agent.py \
                        --savename adapt_coco_agent_dog2cat \
                        --pretrained_agent pretrain_coco_agent/best.pth.tar \
                        --pretrained pretrain_coco_encoder/last.pth.tar \
-                        --dataset coco \
+                       --dataset coco \
                        --backbone vgg16 \
                        --sel_cls cat \
                        --dim 1024 \
