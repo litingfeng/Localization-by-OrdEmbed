@@ -5,6 +5,7 @@
 *.pth
 *.out
 wandb/
+venv/
 datasets/__pycache__/
 models/__pycache__/
 util/__pycache__/

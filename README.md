@@ -11,6 +11,7 @@ This repository is the official implementation of our paper "Learning Transferab
 - Pytorch >= 1.5
 - [Weights & Biases](https://www.wandb.com/)
 - sklearn
+- [Add RoI pool/align layer](https://medium.com/@andrewjong/how-to-use-roi-pool-and-roi-align-in-your-neural-networks-pytorch-1-0-b43e3d22d073)
 
 ## Corrupted MNIST
 ### Data Preparation
