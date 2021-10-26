@@ -2,9 +2,6 @@
 This repository is the official implementation of our paper "Learning Transferable Reward for Query Object Localization with Policy Adaptation".
 
 ![framework](https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/Fig1_v3.png)
-**TODO**: 
-1. include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials.
-2. Add roi layer 
 
 ## Requirements
 - Python3
@@ -146,6 +143,69 @@ CUDA_VISIBLE_DEVICES=7 python adapt_agent.py \
                        --steps_ag 80
 
 ```
-### Evaluation
-### Pre-trained Models
-### Results
+
+## COCO Dataset
+### Training 
+- pretrain RoI encoder and projection head on dog
+```shell
+CUDA_VISIBLE_DEVICES=7 python pretrain_encoder_ordinal.py \
+                        --savename pretrain_coco_encoder \
+                        --dataset coco \
+                        --sel_cls dog \
+                        --backbone vgg16 \
+                        --dim 1024 \
+                        --batch_size 75 \
+                        --img_size 224 \
+                        --log_interval 25 \
+                        --samples_per_class 5 \
+                        --lamb 1.0 \
+                        --epochs 200 \
+                        --margin 60 \
+                        --patience 120 \
+                        --steps 80
+```
+- train agent
+```shell
+CUDA_VISIBLE_DEVICES=7 python train_agent.py \
+                       --savename pretrain_coco_agent \
+                       --pretrained pretrain_coco_encoder/last.pth.tar \
+                       --dataset coco \
+                       --backbone vgg16 \
+                       --dim 1024 \
+                       --dim_ag 512 \
+                       --sel_cls dog \
+                       --img_size 224 \
+                       --min_box_side 40 \
+                       --samples_per_class 5 \
+                       --seq_len 10 \
+                       --num_act 14 \
+                       --patience 100 \
+                       --log_interval 100 \
+                       --epochs 150 \
+                       --batch_size 50 \
+                       --steps_ag 80
+```
+- adapt agent from dog to cat
+```shell
+CUDA_VISIBLE_DEVICES=6 python adapt_agent.py \
+                       --savename adapt_coco_agent_dog2cat \
+                       --pretrained_agent pretrain_coco_agent/best.pth.tar \
+                       --pretrained pretrain_coco_encoder/last.pth.tar \
+                        --dataset coco \
+                       --backbone vgg16 \
+                       --sel_cls cat \
+                       --dim 1024 \
+                       --dim_ag 512 \
+                       --img_size 224 \
+                       --support_size 5 \
+                       --min_box_side 40 \
+                       --seq_len 10 \
+                       --num_act 14 \
+                       --patience 100 \
+                       --log_interval 10 \
+                       --epochs 150 \
+                       --batch_size 64 \
+                       --steps_ag 80
+
+```
+
