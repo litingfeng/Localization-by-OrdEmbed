@@ -1,7 +1,7 @@
 # Learning Transferable Reward for Query Object Localization with Policy Adaptation
 This repository is the official implementation of our paper "Learning Transferable Reward for Query Object Localization with Policy Adaptation".
 
-![framework](https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/Fig1_v3.png)
+![framework](https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/fig1.png)
 
 ## Requirements
 - Python3
