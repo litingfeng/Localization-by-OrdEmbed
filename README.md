@@ -1,5 +1,5 @@
 # Learning Transferable Reward for Query Object Localization with Policy Adaptation
-This repository is the official implementation of our paper "Learning Transferable Reward for Query Object Localization with Policy Adaptation".
+This repository is the official implementation of our ICLR 2022 paper "Learning Transferable Reward for Query Object Localization with Policy Adaptation".
 
 ![framework](https://github.com/litingfeng/Localization-by-Ordinal-Embedding/blob/main/images/fig1.png)
 
@@ -103,4 +103,14 @@ CUDA_VISIBLE_DEVICES=0 python adapt_agent.py \
                        --dim 1024 --dim_ag 512 --img_size 224 \
                        --min_box_side 40 --batch_size 64
 ```
-
+##Bibtex
+```
+@inproceedings{
+li2022learning,
+title={Learning Transferable Reward for Query Object Localization with Policy Adaptation},
+author={Tingfeng Li and Shaobo Han and Martin Renqiang Min and Dimitris N. Metaxas},
+booktitle={International Conference on Learning Representations},
+year={2022},
+url={https://openreview.net/forum?id=92tYQiil17}
+}
+```
