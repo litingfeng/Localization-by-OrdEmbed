@@ -20,58 +20,27 @@ python datasets/generate_data.py --bg_name patch
 ### Training
 1. Pretrain RoI encoder and projection head. Below is an example of training on digit 3.
 ```shell
-CUDA_VISIBLE_DEVICES=7 python pretrain_encoder_ordinal.py \
-                         --savename pretrain_mnist_encoder \
-                         --digit 3 \
-                         --bg_name patch \
-                         --lamb 0.1 \
-                         --margin 60 \
-                         --samples_per_class 10 \
-                         --sample_size 50 \
-                         --batch_size 50 \
-                         --patience 150 \
-                         --epochs 150 \
-                         --steps 80
+CUDA_VISIBLE_DEVICES=0 python pretrain_encoder_ordinal.py \
+                         --savename pretrain_mnist_ae_randpatch \
+                         --digit 3 --bg_name patch --samples_per_class 10 \
+                         --sample_size 50 --batch_size 50
 ```
 2. Train localization agent.
 ```shell
-CUDA_VISIBLE_DEVICES=6 python train_agent.py \
-                       --savename pretrain_mnist_agent \
-                       --pretrained pretrain_mnist_encoder/best.pth.tar \
-                       --img_size 84 \
-                       --bg_name patch \
-                       --samples_per_class 5 \
-                       --sample_size 50 \
-                       --digit 3 \
-                       --hidden_size 48 \
-                       --seq_len 10 \
-                       --num_act 10 \
-                       --patience 100 \
-                       --epochs 250 \
-                       --batch_size 50 \
-                       --steps_ag 200
+CUDA_VISIBLE_DEVICES=0 python train_agent.py \
+                       --savename agent_mnist_ae_randpatch \
+                       --pretrained pretrain_mnist_ae_randpatch/best.pth.tar \
+                       --img_size 84 --bg_name patch --sample_size 50 \
+                       --digit 3 --num_act 10 --batch_size 50 --steps_ag 200
 ```
 3. Test-time adaptation.
 ```shell
-CUDA_VISIBLE_DEVICES=6 python adapt_agent.py \
-                       --savename adapt_mnist_agent_3to2 \
-                       --pretrained_agent pretrain_mnist_agent/best.pth.tar \
-                       --pretrained pretrain_mnist_encoder/best.pth.tar \
-                       --support_size 5 \
-                       --bg_name clutter \
-                       --sample_size whole \
-                       --digit 2 \
-                       --seq_len 10 \
-                       --margin 60 \
-                       --hidden_size 48 \
-                       --num_act 10 \
-                       --patience 50 \
-                       --epochs 100 \
-                       --batch_size 512 \
-                       --steps_ag 80
+CUDA_VISIBLE_DEVICES=0 python adapt_agent.py \
+                       --savename adapt_mnist_randpatch2clutter \
+                       --pretrained_agent agent_mnist_ae_randpatch/best.pth.tar \
+                       --pretrained pretrain_mnist_ae_randpatch/last.pth.tar \
+                       --bg_name clutter --digit 2 --num_act 10 --batch_size 512
 ```
-
-
 ## CUB Dataset
 ### Data Preparation
 Below is an example of generate `gull_59_64.json`. Other files are located at `datasets/cub_files`.
@@ -82,131 +51,56 @@ python datasets/generate_cub_filelist.py
 - pretrain RoI encoder and projection head on warbler
 ```shell
 CUDA_VISIBLE_DEVICES=0 python pretrain_encoder_ordinal.py \
-                        --savename pretrain_cub_encoder \
-                        --dataset cub \
-                        --backbone vgg16 \
-                        --bg_name warbler \
-                        --dim 1024 \
-                        --batch_size 50 \
-                        --img_size 224 \
-                        --log_interval 25 \
-                        --samples_per_class 25 \
-                        --lamb 1.0 \
-                        --epochs 150 \
-                        --margin 60 \
-                        --patience 120 \
-                        --steps 80
+                        --savename pretrain_vgg_cub_warb15 \
+                        --dataset cub --backbone vgg16 --bg_name warbler \
+                        --dim 1024 --batch_size 50 --img_size 224 --lamb 1.0
 ```
 - train agent
 ```shell
-CUDA_VISIBLE_DEVICES=7 python train_agent.py \
-                       --savename pretrain_cub_agent \
-                       --pretrained pretrain_cub_encoder/last.pth.tar \
-                       --dataset cub \
-                       --dim 1024 \
-                       --dim_ag 512 \
-                       --bg_name warbler \
-                       --backbone vgg16 \
-                       --img_size 224 \
-                       --min_box_side 40 \
-                       --samples_per_class 5 \
-                       --seq_len 10 \
-                       --hidden_size 48 \
-                       --num_act 14 \
-                       --patience 100 \
-                       --log_interval 100 \
-                       --epochs 150 \
-                       --batch_size 50 \
-                       --steps_ag 80
+CUDA_VISIBLE_DEVICES=0 python train_agent.py \
+                       --savename agent_vgg_cub_warb15 \
+                       --pretrained pretrain_vgg_cub_warb15/last.pth.tar \
+                       --dataset cub --dim 1024 --dim_ag 512 \
+                       --bg_name warbler --backbone vgg16 --img_size 224 \
+                       --min_box_side 40 --batch_size 50
 ```
-- adapt agent from warbler to gull
+- adapt agent from warbler to wren
 ```shell
-CUDA_VISIBLE_DEVICES=7 python adapt_agent.py \
-                       --savename adapt_cub_agent_warbler2gull \
-                       --pretrained_agent pretrain_cub_agent/best.pth.tar \
-                       --pretrained pretrain_cub_encoder/last.pth.tar \
-                       --evaluate \
-                       --bg_name gull \
-                       --dataset cub \
-                       --backbone vgg16 \
-                       --dim 1024 \
-                       --dim_ag 512 \
-                       --img_size 224 \
-                       --support_size 5 \
-                       --min_box_side 40 \
-                       --seq_len 10 \
-                       --hidden_size 48 \
-                       --num_act 14 \
-                       --patience 100 \
-                       --log_interval 10 \
-                       --epochs 150 \
-                       --batch_size 64 \
-                       --steps_ag 80
-
+CUDA_VISIBLE_DEVICES=0 python adapt_agent.py \
+                       --savename adapt_cub_warbler2wren \
+                       --pretrained_agent agent_vgg_cub_warb15/best.pth.tar \
+                       --pretrained pretrain_vgg_cub_warb15/last.pth.tar \
+                       --bg_name wren --dataset cub --backbone vgg16 \
+                       --dim 1024 --dim_ag 512 --img_size 224 \
+                       --min_box_side 40 --batch_size 64
 ```
 
 ## COCO Dataset
 ### Training 
 - pretrain RoI encoder and projection head on dog
 ```shell
-CUDA_VISIBLE_DEVICES=7 python pretrain_encoder_ordinal.py \
-                        --savename pretrain_coco_encoder \
-                        --dataset coco \
-                        --sel_cls dog \
-                        --backbone vgg16 \
-                        --dim 1024 \
-                        --batch_size 75 \
-                        --img_size 224 \
-                        --log_interval 25 \
-                        --samples_per_class 5 \
-                        --lamb 1.0 \
-                        --epochs 200 \
-                        --margin 60 \
-                        --patience 120 \
-                        --steps 80
+CUDA_VISIBLE_DEVICES=0 python pretrain_encoder_ordinal.py \
+                        --savename pretrain_vgg_coco_dog \
+                        --dataset coco --sel_cls dog --backbone vgg16 \
+                        --dim 1024 --batch_size 75 --img_size 224 --lamb 1.0
 ```
 - train agent
 ```shell
-CUDA_VISIBLE_DEVICES=7 python train_agent.py \
-                       --savename pretrain_coco_agent \
-                       --pretrained pretrain_coco_encoder/last.pth.tar \
-                       --dataset coco \
-                       --backbone vgg16 \
-                       --dim 1024 \
-                       --dim_ag 512 \
-                       --sel_cls dog \
-                       --img_size 224 \
-                       --min_box_side 40 \
-                       --samples_per_class 5 \
-                       --seq_len 10 \
-                       --num_act 14 \
-                       --patience 100 \
-                       --log_interval 100 \
-                       --epochs 150 \
-                       --batch_size 50 \
-                       --steps_ag 80
+CUDA_VISIBLE_DEVICES=0 python train_agent.py \
+                       --savename agent_vgg_coco_dog \
+                       --pretrained pretrain_vgg_coco_dog/last.pth.tar \
+                       --dataset coco --backbone vgg16 \
+                       --dim 1024 --dim_ag 512 --sel_cls dog \
+                       --img_size 224 --min_box_side 40 --batch_size 50
 ```
 - adapt agent from dog to cat
 ```shell
-CUDA_VISIBLE_DEVICES=6 python adapt_agent.py \
-                       --savename adapt_coco_agent_dog2cat \
-                       --pretrained_agent pretrain_coco_agent/best.pth.tar \
-                       --pretrained pretrain_coco_encoder/last.pth.tar \
-                       --dataset coco \
-                       --backbone vgg16 \
-                       --sel_cls cat \
-                       --dim 1024 \
-                       --dim_ag 512 \
-                       --img_size 224 \
-                       --support_size 5 \
-                       --min_box_side 40 \
-                       --seq_len 10 \
-                       --num_act 14 \
-                       --patience 100 \
-                       --log_interval 10 \
-                       --epochs 150 \
-                       --batch_size 64 \
-                       --steps_ag 80
-
+CUDA_VISIBLE_DEVICES=0 python adapt_agent.py \
+                       --savename adapt_coco_dog2cat \
+                       --pretrained_agent agent_vgg_coco_dog/best.pth.tar \
+                       --pretrained pretrain_vgg_coco_dog/last.pth.tar \
+                       --dataset coco --backbone vgg16 --sel_cls cat \
+                       --dim 1024 --dim_ag 512 --img_size 224 \
+                       --min_box_side 40 --batch_size 64
 ```
 
