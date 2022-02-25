@@ -103,7 +103,7 @@ CUDA_VISIBLE_DEVICES=0 python adapt_agent.py \
                        --dim 1024 --dim_ag 512 --img_size 224 \
                        --min_box_side 40 --batch_size 64
 ```
-##Bibtex
+## Bibtex
 ```
 @inproceedings{
 li2022learning,
